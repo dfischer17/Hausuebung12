@@ -12,18 +12,16 @@
         android:id="@+id/input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/editbox_background"
         android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="Input"
-        android:inputType="numberSigned" />
+        android:hint="Eingabe"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:text="=" />
+        android:text="="
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/resultTextView"

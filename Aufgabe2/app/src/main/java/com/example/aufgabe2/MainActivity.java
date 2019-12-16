@@ -23,26 +23,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         // Elemente
-        EditText inputView = findViewById(R.id.input);
+        TextView inputView = findViewById(R.id.input);
         TextView resultView = findViewById(resultTextView);
 
-        // Einzelne Zeichen der Eingabe
-        char[] inputCharacters = inputView.toString().trim().toCharArray();
+        // Rechner mit rekursiven Abstieg
+        Calculator calculator = new Calculator();
 
-        int result = inputCharacters[0];
+        // Nutzereingabe
+        String input = inputView.getText().toString().trim();
 
-        // Zeichen durchlaufen und result erhöhen/erniedrigen
-        for (int i = 1; i < inputCharacters.length; i++) {
-            if (inputCharacters[i] == '+') {
-                result += inputCharacters[i + 1];
-                i++;
-            }
-            else {
-                result += inputCharacters[i + 1];
-                i--;
-            }
-        }
+        // Berechnung des Ergebnisses
+        double result = calculator.parse(input);
 
-        resultView.setText(result);
+        resultView.setText(String.valueOf(result));
     }
 }
